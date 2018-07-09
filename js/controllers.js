@@ -17,6 +17,7 @@ function ($scope, $stateParams) {
         fileInput = document.getElementById('file-input');
 
         fileInput.addEventListener('change', function () {
+            alert("SENDING");
         let photo = fileInput.files[0];
 
         let formData = new FormData();
