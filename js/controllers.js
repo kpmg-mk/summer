@@ -20,7 +20,7 @@ function ($scope, $stateParams) {
         fileInput = document.getElementById('file-input');
         
         fileInput.addEventListener('change', function () {
-            function getBase64(file) {
+            var getBase64= function (file) {
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function () {
@@ -42,7 +42,7 @@ function ($scope, $stateParams) {
             // formData.append("user", JSON.stringify(user));   // you can add also some json data to formData like e.g. user = {name:'john', age:34}
 
             let xhr = new XMLHttpRequest();
-            pathURL= 'https://cf7856b0.ngrok.io/upload-get/' + 'HELLO' + '/';
+            pathURL= 'https://cf7856b0.ngrok.io/upload-get/' + b64String + '/';
             xhr.open("GET", pathURL);
             xhr.send(formData);
         });
