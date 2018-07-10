@@ -13,22 +13,24 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
     $scope.$on('$ionicView.loaded', function(event) {
-        function getBase64(file) {
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function () {
-              console.log(reader.result);
-            };
-            reader.onerror = function (error) {
-              console.log('Error: ', error);
-            };
-         }
+        
 
 
         cameraButton= document.getElementById("home-button1");
         fileInput = document.getElementById('file-input');
         
         fileInput.addEventListener('change', function () {
+            function getBase64(file) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                  console.log(reader.result);
+                };
+                reader.onerror = function (error) {
+                  console.log('Error: ', error);
+                };
+             }
+
             alert("SENDING");
             let photo = fileInput.files[0];
 
