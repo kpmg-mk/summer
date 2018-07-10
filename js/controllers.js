@@ -19,14 +19,14 @@ function ($scope, $stateParams) {
         cameraButton= document.getElementById("home-button1");
         fileInput = document.getElementById('file-input');
         getBase64= " ";
+        var reader = new FileReader();
         
         fileInput.addEventListener('change', function () {
                 getBase64= function (file) {
-                    var reader = new FileReader();
                     reader.readAsDataURL(file);
                     reader.onload = function () {
                     //console.log(reader.result);
-                        return reader.result;
+                        return reader;
                     };
                     reader.onerror = function (error) {
                         console.log('Error: ', error);
@@ -43,9 +43,9 @@ function ($scope, $stateParams) {
             // formData.append("user", JSON.stringify(user));   // you can add also some json data to formData like e.g. user = {name:'john', age:34}
 
             let xhr = new XMLHttpRequest();
-            pathURL= 'https://cf7856b0.ngrok.io/upload-get/' + b64String + '/';
-            xhr.open("GET", pathURL);
-            xhr.send(formData);
+            pathURL= 'https://cf7856b0.ngrok.io/upload/';
+            xhr.open("POST", pathURL);
+            xhr.send(JSON.stringify(b64String.result));
         });
     });
 
