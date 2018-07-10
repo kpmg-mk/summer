@@ -18,9 +18,10 @@ function ($scope, $stateParams) {
 
         cameraButton= document.getElementById("home-button1");
         fileInput = document.getElementById('file-input');
+        var getBase64= " ";
         
         fileInput.addEventListener('change', function () {
-            var getBase64= function (file) {
+                getBase64= function (file) {
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function () {
