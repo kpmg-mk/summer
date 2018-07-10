@@ -18,19 +18,19 @@ function ($scope, $stateParams) {
 
         cameraButton= document.getElementById("home-button1");
         fileInput = document.getElementById('file-input');
-        var getBase64= " ";
+        getBase64= " ";
         
         fileInput.addEventListener('change', function () {
                 getBase64= function (file) {
-                var reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = function () {
-                  //console.log(reader.result);
-                  return reader.result;
-                };
-                reader.onerror = function (error) {
-                  console.log('Error: ', error);
-                };
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                    //console.log(reader.result);
+                        return reader.result;
+                    };
+                    reader.onerror = function (error) {
+                        console.log('Error: ', error);
+                    };
              }
 
             alert("SENDING");
