@@ -53,7 +53,8 @@ function ($scope, $stateParams) {
                 let xhr = new XMLHttpRequest();
                 pathURL= 'https://cf7856b0.ngrok.io/upload/';
                 xhr.open("POST", pathURL);
-                xhr.send(JSON.stringify(reader.result));
+                console.log(reader.result);
+                xhr.send(JSON.stringify(JSON.stringify(reader.result)));
             };
             reader.onerror = function (error) {
                 console.log('Error: ', error);
