@@ -15,7 +15,7 @@ function ($scope, $stateParams) {
     $scope.$on('$ionicView.loaded', function(event) {
         cameraButton= document.getElementById("home-button1");
         fileInput = document.getElementById('file-input');
-
+        /*
         fileInput.addEventListener('change', function () {
             alert("SENDING");
         let photo = fileInput.files[0];
@@ -27,7 +27,7 @@ function ($scope, $stateParams) {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", 'https://cf7856b0.ngrok.io/upload/');
         xhr.send(formData);
-    });
+    });*/
     });
 
 }])
