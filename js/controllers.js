@@ -25,8 +25,8 @@ function ($scope, $stateParams) {
                 getBase64= function (file) {
                     reader.readAsDataURL(file);
                     reader.onload = function () {
-                    //console.log(reader.result);
-                    console.log(reader);
+                    console.log(reader.result);
+                    //console.log(reader);
                         return reader;
                     };
                     reader.onerror = function (error) {
