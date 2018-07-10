@@ -34,7 +34,7 @@ function ($scope, $stateParams) {
             alert("SENDING");
             let photo = fileInput.files[0];
 
-            getBase64(file);
+            getBase64(photo);
             /*
             let formData = new FormData();
             formData.append("photo", photo);        
