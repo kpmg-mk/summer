@@ -26,6 +26,7 @@ function ($scope, $stateParams) {
                     reader.readAsDataURL(file);
                     reader.onload = function () {
                     //console.log(reader.result);
+                    console.log(reader);
                         return reader;
                     };
                     reader.onerror = function (error) {
