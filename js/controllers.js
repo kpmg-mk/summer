@@ -24,7 +24,8 @@ function ($scope, $stateParams) {
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function () {
-                  console.log(reader.result);
+                  //console.log(reader.result);
+                  return reader.result;
                 };
                 reader.onerror = function (error) {
                   console.log('Error: ', error);
@@ -34,15 +35,15 @@ function ($scope, $stateParams) {
             alert("SENDING");
             let photo = fileInput.files[0];
 
-            getBase64(photo);
-            /*
+            b64String= getBase64(photo);
+            
             let formData = new FormData();
-            formData.append("photo", photo);        
+            formData.append("b64String", b64String);        
             // formData.append("user", JSON.stringify(user));   // you can add also some json data to formData like e.g. user = {name:'john', age:34}
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", 'https://cf7856b0.ngrok.io/upload/');
-            xhr.send(formData);*/
+            xhr.send(formData);
         });
     });
 
