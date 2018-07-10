@@ -25,7 +25,7 @@ function ($scope, $stateParams) {
         // formData.append("user", JSON.stringify(user));   // you can add also some json data to formData like e.g. user = {name:'john', age:34}
 
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", 'https://25bdd36a.ngrok.io/upload/');
+        xhr.open("POST", 'http://cf7856b0.ngrok.io/upload/');
         xhr.send(formData);
     });
     });
